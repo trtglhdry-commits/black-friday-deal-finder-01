@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DealBeacon: 32 real Black Friday and Cyber Monday deals, each checked on 27 November 2026 — price, usual price, discount, store link and an honest is-it-really-a-deal signal.">
+<title>DealBeacon — Real Black Friday Deals, Checked Today</title>
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="finder.js"></script>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="brand">
+      <span class="beacon" aria-hidden="true"><span class="beacon-dot"></span></span>
+      <div>
+        <h1>DealBeacon</h1>
+        <p class="tagline">Real Black Friday deals, checked today — no inflated “was” prices, no guesses.</p>
+      </div>
+    </div>
+    <dl class="stats" id="stats">
+      <div><dt>Deals checked</dt><dd id="stat-deals">32</dd></div>
+      <div><dt>Stores</dt><dd id="stat-stores">8</dd></div>
+      <div><dt>Average saving</dt><dd id="stat-avg">41%</dd></div>
+      <div><dt>Checked</dt><dd>27 Nov 2026</dd></div>
+    </dl>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="controls" aria-label="Find a deal">
+    <div class="search-row">
+      <label class="search-label" for="search">Search deals</label>
+      <input id="search" type="search" placeholder="Try “OLED”, “AirPods”, “vacuum”… " autocomplete="off">
+    </div>
+    <div class="chip-row" id="categories" role="group" aria-label="Filter by category"></div>
+    <div class="select-row">
+      <label>Store
+        <select id="store">
+          <option value="">All stores</option>
+        </select>
+      </label>
+      <label>Minimum discount
+        <select id="min-discount">
+          <option value="0">Any discount</option>
+          <option value="20">20% off or more</option>
+          <option value="30">30% off or more</option>
+          <option value="40">40% off or more</option>
+          <option value="50">50% off or more</option>
+        </select>
+      </label>
+      <label>Sort by
+        <select id="sort">
+          <option value="discount">Biggest discount</option>
+          <option value="signal">Best signal first</option>
+          <option value="price">Lowest price</option>
+          <option value="saving">Biggest cash saving</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </label>
+    </div>
+    <p class="count-line" id="count-line" aria-live="polite">Showing 32 of 32 deals</p>
+  </section>
+
+  <section aria-label="Deals">
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>No deals match that search. Clear the search or pick another category.</p>
+  </section>
+
+  <section class="method" aria-label="How we check every deal">
+    <h2>How we check every deal</h2>
+    <ol>
+      <li><strong>Find it live.</strong> Each price was read on 27 November 2026 from the store or from a deals source that names the store.</li>
+      <li><strong>Check the “was” price.</strong> The discount is worked out from the two prices shown — if they don’t add up, the deal doesn’t go on the board.</li>
+      <li><strong>Call it honestly.</strong> <span class="pill pill-new">NEW LOW</span> means the source reports a record or season low. <span class="pill pill-strong">STRONG DEAL</span> is a deep cut below the usual price. <span class="pill pill-routine">ROUTINE SALE</span> is a modest cut, or a price the product hits often.</li>
+      <li><strong>Show the receipt.</strong> Every card says when its price was checked and where it was read, so you can verify it yourself.</li>
+    </ol>
+    <p class="sources">Sources checked 27 Nov 2026: 9to5Toys, TechRadar, Hunt4Freebies, MacRumors, Tom’s Guide, The World Data, TechResearchOnline, and the retailers’ own Black Friday pages. Prices can change or sell out — the store page is the final word.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>DealBeacon is an independent deal finder built for make.fun’s Black Friday bounty. It is not affiliated with Amazon, Best Buy, Walmart, Costco, or any store listed. Store names and product names belong to their owners; links go to the store’s own search for that product.</p>
+    <p>All 32 deals checked 27 November 2026 · Prices in USD · Black Friday 27 Nov – Cyber Monday 30 Nov 2026</p>
+  </div>
+</footer>
+</body>
+</html>
