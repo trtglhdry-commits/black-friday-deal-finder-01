@@ -8,7 +8,8 @@ import { join, extname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const here = fileURLToPath(new URL(".", import.meta.url));
-const port = Number(process.argv[process.argv.indexOf("--port") + 1] || 8080);
+const portFlag = process.argv.indexOf("--port");
+const port = portFlag >= 0 ? Number(process.argv[portFlag + 1] || 8080) : 8080;
 
 const TYPES = {
   ".html": "text/html; charset=utf-8",
